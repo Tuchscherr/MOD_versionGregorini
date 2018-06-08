@@ -63,7 +63,6 @@ public class Controlador : MonoBehaviour {
 		Load(Application.streamingAssetsPath + "/Save.txt");
 		if(!ganaste){
 			if (HijosGanados [0] && HijosGanados [1] && HijosGanados [2] && HijosGanados [3] && HijosGanados [4] && HijosGanados [5] && HijosGanados [6] && HijosGanados [7] && HijosGanados [8] && HijosGanados [9] && HijosGanados [10] && HijosGanados [11]) {
-				Debug.Log ("GANATE");
 				ganaste = true;
 				CantidadGanadas++;
 				Analytics.CustomEvent("TodosLosDragoncitos", new Dictionary<string, object>
