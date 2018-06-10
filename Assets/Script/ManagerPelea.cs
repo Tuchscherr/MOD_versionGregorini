@@ -176,12 +176,48 @@ public class ManagerPelea : MonoBehaviour
 		dragoncitoE1 = -1;
 		dragoncitoE2 = -1;
 
-		if (Controlador.escenaPrevia == "ARIEL") {
+		if (Controlador.escenaPrevia == "SANTI") {
 			// Dragon Normal
 			GameObject.FindGameObjectWithTag ("israel").SetActive (false);
 			GameObject.FindGameObjectWithTag ("maximiliano").SetActive (false);
 			GameObject.FindGameObjectWithTag ("diego").SetActive (false);
 			GameObject.FindGameObjectWithTag ("ariel").SetActive (false);
+			GameObject.FindGameObjectWithTag ("mateo").SetActive (false);
+			enemigoActual = 28;
+
+			// Dragon Normal
+			switch (Random.Range (0, 6)) {
+			case 0: 
+				// Dragoncito Agua
+				dragoncitoE1 = DRAGONCITO_ELECTRICO+DESFASAJE_ENEMIGOS;
+				break;
+			case 1: 
+				// Dragoncito Fuego
+				dragoncitoE1 = DRAGONCITO_LODO+DESFASAJE_ENEMIGOS;
+				break;
+			case 2: 
+				// Dragoncito Aire
+				dragoncitoE1 = DRAGONCITO_METAL+DESFASAJE_ENEMIGOS;
+				break;
+			
+			}
+
+			if (Random.Range (0, 10) == 0) {
+				if (dragoncitoE1 != -1) {
+					// Segundo Dragoncito Normal
+					dragoncitoE2 = DRAGONCITO_NORMAL+DESFASAJE_ENEMIGOS;
+				}
+			}
+
+		}
+
+		if (Controlador.escenaPrevia == "MATEO") {
+			// Dragon Normal
+			GameObject.FindGameObjectWithTag ("israel").SetActive (false);
+			GameObject.FindGameObjectWithTag ("maximiliano").SetActive (false);
+			GameObject.FindGameObjectWithTag ("diego").SetActive (false);
+			GameObject.FindGameObjectWithTag ("ariel").SetActive (false);
+			GameObject.FindGameObjectWithTag ("santi").SetActive (false);
 			enemigoActual = 23;
 
 			// Dragon Normal
@@ -212,12 +248,13 @@ public class ManagerPelea : MonoBehaviour
 			}
 
 		}
-		if (Controlador.escenaPrevia == "MATEO") {
+		if (Controlador.escenaPrevia == "DIEGO") {
 			// Dragon Diego - Tierra
 			GameObject.FindGameObjectWithTag ("israel").SetActive (false);
 			GameObject.FindGameObjectWithTag ("maximiliano").SetActive (false);
 			GameObject.FindGameObjectWithTag ("mateo").SetActive (false);
 			GameObject.FindGameObjectWithTag ("ariel").SetActive (false);
+			GameObject.FindGameObjectWithTag ("santi").SetActive (false);
 			enemigoActual = 27;
 
 			// Dragon TIERRA
@@ -243,12 +280,13 @@ public class ManagerPelea : MonoBehaviour
 				}
 			}
 		}
-		if (Controlador.escenaPrevia == "DIEGO") {
+		if (Controlador.escenaPrevia == "ARIEL") {
 			// Dragon Ariel - Fuego
 			GameObject.FindGameObjectWithTag ("israel").SetActive (false);
 			GameObject.FindGameObjectWithTag ("maximiliano").SetActive (false);
 			GameObject.FindGameObjectWithTag ("diego").SetActive (false);
 			GameObject.FindGameObjectWithTag ("mateo").SetActive (false);
+			GameObject.FindGameObjectWithTag ("santi").SetActive (false);
 			enemigoActual = 24;
 			// Dragon Fuego
 			switch (Random.Range (0, 6)) {
@@ -278,6 +316,7 @@ public class ManagerPelea : MonoBehaviour
 			GameObject.FindGameObjectWithTag ("ariel").SetActive (false);
 			GameObject.FindGameObjectWithTag ("diego").SetActive (false);
 			GameObject.FindGameObjectWithTag ("mateo").SetActive (false);
+			GameObject.FindGameObjectWithTag ("santi").SetActive (false);
 			enemigoActual = 26;
 			// Dragon Maximiliano - Aire
 			switch (Random.Range (0, 6)) {
@@ -308,6 +347,7 @@ public class ManagerPelea : MonoBehaviour
 			GameObject.FindGameObjectWithTag ("maximiliano").SetActive (false);
 			GameObject.FindGameObjectWithTag ("diego").SetActive (false);
 			GameObject.FindGameObjectWithTag ("mateo").SetActive (false);
+			GameObject.FindGameObjectWithTag ("santi").SetActive (false);
 			enemigoActual = 25;
 			// Dragon Isrrael AGUA
 			switch (Random.Range (0, 6)) {
