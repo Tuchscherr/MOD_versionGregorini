@@ -824,6 +824,7 @@ MonoBehaviour:
   choiceBox2: {fileID: 1505230720}
   choiceBox3: {fileID: 1837129912}
   romance: {fileID: 224293168}
+  posiblesHijos: 0400000008000000030000000b000000050000000b000000060000000200000009000000040000000100000007000000020000000a00000001000000030000000600000007000000080000000a0000000500000003000000070000000400000009000000
 --- !u!114 &441053342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1764,7 +1765,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b99c6c5b8f6adcf41b31aee40d07cdce, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 483aff850e157b049ad238115d7d7f4d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

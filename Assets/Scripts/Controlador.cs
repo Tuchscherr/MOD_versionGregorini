@@ -179,7 +179,7 @@ public class Controlador : MonoBehaviour {
 		//int perfilesIndice = Random.Range (1, 4);
 		//if (perfilesIndice != perfilesIndice) {
 
-		int perfilesIndice = GetRandom(1,16);
+		int perfilesIndice = GetRandom(1,10);
 		SceneManager.LoadScene ("perfil" + perfilesIndice.ToString ());
 
 	}

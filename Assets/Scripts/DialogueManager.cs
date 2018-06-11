@@ -20,6 +20,8 @@ public class DialogueManager : MonoBehaviour {
 	public ChoiceButton choiceBox1, choiceBox2, choiceBox3;
 	public VideoPlayer romance;
 
+	public int[] posiblesHijos = {5, 11, 6, 2, 9, 4, 1, 7, 2, 4, 8, 3, 11, 10, 1, 3, 6, 7, 8, 10, 5, 3, 7, 4, 9 };
+
 	public static string resultado = "";
 	public static float StartTime = 0;
 
@@ -115,13 +117,13 @@ public class DialogueManager : MonoBehaviour {
 		switch(linea) {
 			case -1:
 				if(SceneManager.GetActiveScene().name == "Scene1"){
-					Controlador.escenaPrevia = "ARIEL";
-				}
-				if(SceneManager.GetActiveScene().name == "Scene2"){
 					Controlador.escenaPrevia = "MATEO";
 				}
-				if(SceneManager.GetActiveScene().name == "Scene3"){
+				if(SceneManager.GetActiveScene().name == "Scene2"){
 					Controlador.escenaPrevia = "DIEGO";
+				}
+				if(SceneManager.GetActiveScene().name == "Scene3"){
+					Controlador.escenaPrevia = "ARIEL";
 				}
 				if(SceneManager.GetActiveScene().name == "Scene4"){
 					Controlador.escenaPrevia = "MAXIMILIANO";
@@ -149,27 +151,27 @@ public class DialogueManager : MonoBehaviour {
 
 		case 0:
 			if (SceneManager.GetActiveScene ().name == "Scene1") {
-				Controlador.GanarHijo (9);
-				Controlador.escenaPrevia = "ARIEL";
-			}
-			if (SceneManager.GetActiveScene ().name == "Scene2") {
-				Controlador.GanarHijo (2);
+				Controlador.GanarHijo (posiblesHijos[Random.Range(0,4)]);
 				Controlador.escenaPrevia = "MATEO";
 			}
-			if (SceneManager.GetActiveScene ().name == "Scene3") {
-				Controlador.GanarHijo (11);
+			if (SceneManager.GetActiveScene ().name == "Scene2") {
+				Controlador.GanarHijo (posiblesHijos[Random.Range(5,8)]);
 				Controlador.escenaPrevia = "DIEGO";
 			}
+			if (SceneManager.GetActiveScene ().name == "Scene3") {
+				Controlador.GanarHijo (posiblesHijos[Random.Range(9,12)]);
+				Controlador.escenaPrevia = "ARIEL";
+			}
 			if (SceneManager.GetActiveScene ().name == "Scene4") {
-				Controlador.GanarHijo (6);
+				Controlador.GanarHijo (posiblesHijos[Random.Range(13,16)]);
 				Controlador.escenaPrevia = "MAXIMILIANO";
 			}
 			if (SceneManager.GetActiveScene ().name == "Scene5") {
-				Controlador.GanarHijo (5);
+				Controlador.GanarHijo (posiblesHijos[Random.Range(17,20)]);
 				Controlador.escenaPrevia = "ISRAEL";
 			}
 			if (SceneManager.GetActiveScene ().name == "Scene6") {
-				Controlador.GanarHijo (9);
+				Controlador.GanarHijo (posiblesHijos[Random.Range(21,24)]);
 				Controlador.escenaPrevia = "SANTI";
 			}
 
