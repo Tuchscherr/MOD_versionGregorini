@@ -10,7 +10,7 @@ using System.Text.RegularExpressions;
 
 public class Controlador : MonoBehaviour {
 	// En vez de esto hay que cargar los dragonciotosm que ya ganaste del save
-	public static bool[] HijosGanados = new bool[]{true, false, false, false, false, false, false, false, false, false, false, false};
+	public static bool[] HijosGanados = new bool[]{false, false, false, false, false, false, false, false, false, false, false, false};
 
 	public static int CantidadDeLikes = 0;
 	public static int CantidadDeCoincidencias = 0;
@@ -46,6 +46,7 @@ public class Controlador : MonoBehaviour {
 	public static int CantDeValMuyMala = 0;
 	public static bool ganaste = false;
 
+	public Animator animator;
 
 //	[SerializeField]
 //	public BotonDragoncitos botonesDragoncitos;
@@ -58,6 +59,20 @@ public class Controlador : MonoBehaviour {
 	void Awake(){
 
 		StartTime = Time.time;
+
+		if(SceneManager.GetActiveScene().name == "perfil1" || SceneManager.GetActiveScene().name == "perfil2" || SceneManager.GetActiveScene().name == "perfil3"|| SceneManager.GetActiveScene().name == "perfil4"|| SceneManager.GetActiveScene().name == "perfil5"|| SceneManager.GetActiveScene().name == "perfil"){
+			if (ContarHijos (HijosGanados) > 0 && ContarHijos (HijosGanados) < 2) {
+				animator.SetTrigger ("SeleccHijo");
+				dragoncito1 = -1;
+				dragoncito2 = -1;
+				/*foreach (var dragoncito in HijosGanados){
+					if (dragoncito == true) {
+						print("NUM ARRAY "+System.Array.IndexOf(HijosGanados,dragoncito));
+						this.GetComponent<BotonDragoncitos>().Pintar(System.Array.IndexOf(HijosGanados,dragoncito));
+					}
+				}*/
+			}
+		}
 
 
 		Load(Application.streamingAssetsPath + "/Save.txt");
@@ -90,6 +105,18 @@ public class Controlador : MonoBehaviour {
 		yield return new WaitForSeconds(2);
 		SceneManager.LoadScene ("Ganaste");
 
+	}
+
+	private int ContarHijos( bool[] booleans )
+	{
+		int result = 0;
+		foreach ( bool b in booleans )
+		{
+			if ( b == true ) {
+				result++;
+			}
+		}
+		return result;
 	}
 
 	public static void Load(string filename) {
