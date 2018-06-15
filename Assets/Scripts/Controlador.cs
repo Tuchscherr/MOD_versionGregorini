@@ -10,7 +10,7 @@ using System.Text.RegularExpressions;
 
 public class Controlador : MonoBehaviour {
 	// En vez de esto hay que cargar los dragonciotosm que ya ganaste del save
-	public static bool[] HijosGanados = new bool[]{false, false, false, false, false, false, false, false, false, false, false, false};
+	public static bool[] HijosGanados = new bool[]{true, false, false, false, false, false, false, false, false, false, false, false};
 
 	public static int CantidadDeLikes = 0;
 	public static int CantidadDeCoincidencias = 0;
@@ -57,10 +57,10 @@ public class Controlador : MonoBehaviour {
 	public Text guardarPartida;
 
 	void Awake(){
-
+		
 		StartTime = Time.time;
 
-		if(SceneManager.GetActiveScene().name == "perfil1" || SceneManager.GetActiveScene().name == "perfil2" || SceneManager.GetActiveScene().name == "perfil3"|| SceneManager.GetActiveScene().name == "perfil4"|| SceneManager.GetActiveScene().name == "perfil5"|| SceneManager.GetActiveScene().name == "perfil"){
+		if(SceneManager.GetActiveScene().name == "perfil1" || SceneManager.GetActiveScene().name == "perfil2" || SceneManager.GetActiveScene().name == "perfil3"|| SceneManager.GetActiveScene().name == "perfil4"|| SceneManager.GetActiveScene().name == "perfil5"|| SceneManager.GetActiveScene().name == "perfil6"){
 			if (ContarHijos (HijosGanados) > 0 && ContarHijos (HijosGanados) < 2) {
 				animator.SetTrigger ("SeleccHijo");
 				dragoncito1 = -1;
@@ -116,7 +116,7 @@ public class Controlador : MonoBehaviour {
 				result++;
 			}
 		}
-		return result;
+		return result-1;
 	}
 
 	public static void Load(string filename) {
